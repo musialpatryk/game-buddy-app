@@ -1,0 +1,14 @@
+import { Routes } from '@angular/router';
+import { GAME_MANAGEMENT_ROUTES } from './modules/games/game-management.routes';
+
+export const routes: Routes = [
+  {
+    path: 'games',
+    children: GAME_MANAGEMENT_ROUTES,
+  },
+  {
+    path: '',
+    redirectTo: '/games/add',
+    pathMatch: 'full',
+  },
+];
