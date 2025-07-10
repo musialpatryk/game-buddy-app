@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { GAME_MANAGEMENT_ROUTES } from './modules/games/game-management.routes';
+import { GAME_MANAGEMENT_ROUTES } from './games/game-management.routes';
 
 export const routes: Routes = [
   {

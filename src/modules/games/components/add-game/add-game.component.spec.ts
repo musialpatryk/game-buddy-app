@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AddGameComponent } from './add-game.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { GameRepository } from '../../../repository/games/game-repository.service';
+import { GameRepository } from '../../repositories/games/game-repository.service';
 import { of } from 'rxjs';
 
 describe('AddGameComponent', () => {
@@ -37,11 +37,11 @@ describe('AddGameComponent', () => {
   });
 
   it('should create game with valid form data', () => {
-    mockRepository.create.and.returnValue(of({ id: 1, name: 'Carcassonne' }));
+    mockRepository.create.and.returnValue(of({ id: 1, name: 'Test 1' }));
 
-    component.form.setValue({ name: 'Carcassonne' });
+    component.form.setValue({ name: 'Test 1' });
     component.submit();
 
-    expect(mockRepository.create).toHaveBeenCalledOnceWith({ name: 'Carcassonne' });
+    expect(mockRepository.create).toHaveBeenCalledOnceWith({ name: 'Test 1' });
   });
 });

@@ -11,6 +11,10 @@ export class GameRepository {
 
   private http = inject(HttpClient);
 
+  getAll(): Observable<IGame[]> {
+    return this.http.get<IGame[]>(`${this.baseUrl}/games`);
+  }
+
   create(dto: { name: string }): Observable<IGame> {
     return this.http.post<IGame>(this.baseUrl, dto);
   }
