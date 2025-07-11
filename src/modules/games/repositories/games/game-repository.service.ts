@@ -12,7 +12,7 @@ export class GameRepository {
   private http = inject(HttpClient);
 
   getAll(): Observable<IGame[]> {
-    return this.http.get<IGame[]>(`${this.baseUrl}/games`);
+    return this.http.get<IGame[]>(`${this.baseUrl}`);
   }
 
   create(dto: { name: string }): Observable<IGame> {

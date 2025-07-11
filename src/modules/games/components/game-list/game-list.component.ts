@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GameRepository } from '../../repositories/games/game-repository.service';
 
@@ -9,5 +9,5 @@ import { GameRepository } from '../../repositories/games/game-repository.service
   templateUrl: './game-list.component.html',
 })
 export class GameListComponent {
-  gameRepository = inject(GameRepository);
+  allGames$ = inject(GameRepository).getAll();
 }

@@ -1,5 +1,5 @@
 <div class="game-list">
-  @for (game of gameRepository.getAll() | async; track game.id) {
+  @for (game of allGames$ | async; track game.id) {
     <div class="game-item">
       {{game.id}} {{game.name}}
     </div>

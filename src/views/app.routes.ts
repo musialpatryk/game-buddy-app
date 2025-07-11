@@ -8,7 +8,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/games/add',
+    redirectTo: '/games',
     pathMatch: 'full',
   },
 ];
