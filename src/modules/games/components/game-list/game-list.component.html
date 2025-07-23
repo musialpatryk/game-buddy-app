@@ -1,11 +1,13 @@
-<div class="game-list">
-  @for (game of allGames$ | async; track game.id) {
-    <div class="game-item">
-      {{game.id}} {{game.name}}
-    </div>
-  } @empty {
-    <div class="game-item">
-      There is no items
-    </div>
-  }
-</div>
+@if (allGames$ | async; as allGames) {
+  <div class="game-list">
+    @for (game of allGames; track game.id) {
+      <game [game]="game"></game>
+    } @empty {
+      <div class="game-item">
+        Brak gier
+      </div>
+    }
+  </div>
+} @else {
+  <mat-spinner [diameter]="50"></mat-spinner>
+}

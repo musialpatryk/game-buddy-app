@@ -1,14 +1,34 @@
 import { Routes } from '@angular/router';
-import { GAME_MANAGEMENT_ROUTES } from './games/game-management.routes';
+import { GameComponent } from '../modules/games/components/game/game.component';
+import { GameRepository } from '../modules/games/repositories/games/game-repository.service';
+import { GameViewComponent } from './games-view/games-view.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
   {
     path: 'games',
-    children: GAME_MANAGEMENT_ROUTES,
+    children: [
+      {
+        path: ':id',
+        component: GameComponent,
+        resolve: {
+          game: GameRepository,
+          showDetails: () => true,
+        }
+      },
+      {
+        path: '',
+        component: GameViewComponent,
+      },
+    ],
   },
   {
-    path: '',
-    redirectTo: '/games',
+    path: 'not-found',
     pathMatch: 'full',
+    component: NotFoundComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '/not-found',
   },
 ];
