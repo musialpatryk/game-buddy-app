@@ -2,11 +2,13 @@ import {Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { GameRepository } from '../../repositories/games/game-repository.service';
+import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'add-game',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MatFormField, MatLabel, MatInput, MatLabel, MatFormField, MatButton],
   templateUrl: './add-game.component.html',
 })
 export class AddGameComponent {

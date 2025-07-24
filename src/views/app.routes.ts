@@ -23,6 +23,11 @@ export const routes: Routes = [
     ],
   },
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/games',
+  },
+  {
     path: 'not-found',
     pathMatch: 'full',
     component: NotFoundComponent,

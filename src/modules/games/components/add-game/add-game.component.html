@@ -1,8 +1,17 @@
-<h2>Dodaj grę</h2>
-<form [formGroup]="form" (ngSubmit)="submit()">
-  <label>
-    Nazwa gry:
-    <input formControlName="name" />
-  </label>
-  <button type="submit">Dodaj</button>
-</form>
+<div style="display: flex;flex-direction: column">
+  <h2>Dodaj grę</h2>
+  <form [formGroup]="form"
+        (ngSubmit)="submit()"
+        style="display: flex;flex-direction: column">
+    <mat-form-field>
+      <mat-label>Nazwa gry:</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+    <div>
+      <button type="submit"
+              matButton="filled">
+        Dodaj
+      </button>
+    </div>
+  </form>
+</div>
