@@ -2,9 +2,16 @@
   <mat-sidenav #drawer
                mode="over"
                class="sidenav">
-    <mat-nav-list>
-      <a mat-list-item routerLink="/games">Gry</a>
-    </mat-nav-list>
+    <div style="padding-left: 1rem;">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/games">
+          Lista gier
+        </a>
+        <a mat-list-item routerLink="/collection">
+          Kolekcja gier
+        </a>
+      </mat-nav-list>
+    </div>
   </mat-sidenav>
 
   <mat-sidenav-content>
@@ -12,7 +19,9 @@
       <button mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Game buddy app</span>
+      <span routerLink="/">
+        Game buddy
+      </span>
     </mat-toolbar>
 
     <router-outlet></router-outlet>
