@@ -13,7 +13,11 @@
 
   @if (gameDetails$ | async; as gameDetails) {
     <mat-card-content>
-      <p>{{gameDetails?.description ?? 'Szczegóły gry nie zostały jeszcze uzupełnione.'}}</p>
+      <p style="margin-bottom: 1.5rem;">{{gameDetails?.description ?? 'Szczegóły gry nie zostały jeszcze uzupełnione.'}}</p>
+
+      <p>Długość rozgrywki: {{gameDetails.duration}} minut</p>
+      <p>Minimalna ilość graczy: {{gameDetails.min_players}} minut</p>
+      <p>Maksymalna ilość graczy: {{gameDetails.max_players}} minut</p>
     </mat-card-content>
 
     @if (gameDetails.categories.length) {

@@ -8,7 +8,7 @@ import { GameDetailsRepository } from '../../repositories/game-details/game-repo
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { catchError, Observable, of, startWith } from 'rxjs';
 import { IGameDetails } from '../../repositories/game-details/game-details.interface';
-import { MatListItem } from '@angular/material/list';
+import { MatList, MatListItem } from '@angular/material/list';
 import { RouterLink } from '@angular/router';
 
 @Component({
