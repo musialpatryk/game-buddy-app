@@ -2,13 +2,27 @@
           style="margin: 1rem; padding-bottom: 1rem;"
           appearance="outlined">
   <mat-card-header>
-    <mat-card-title>
+    <div style="padding: 1rem;display: flex;justify-content: space-between;align-items: center;width: 100%">
+      <mat-card-title>
+          @if (showDetails) {
+            <div>#{{game.id}} {{game.name}}</div>
+          } @else {
+            <a [routerLink]="['/games', game.id]">#{{game.id}} {{game.name}}</a>
+          }
+      </mat-card-title>
+
       @if (showDetails) {
-        #{{game.id}} {{game.name}}
-      } @else {
-        <a [routerLink]="['/games', game.id]">#{{game.id}} {{game.name}}</a>
+        @let inCollection = inCollection$ | async;
+        <button matButton="tonal" (click)="updateCollection(inCollection)">
+          @if (inCollection) {
+            Usuń z kolekcji
+          } @else {
+            Dodaj do kolekcji
+          }
+        </button>
       }
-    </mat-card-title>
+    </div>
+
   </mat-card-header>
 
   @if (gameDetails$ | async; as gameDetails) {

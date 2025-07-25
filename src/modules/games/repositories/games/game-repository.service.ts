@@ -12,7 +12,11 @@ export class GameRepository implements Resolve<IGame> {
 
   private http = inject(HttpClient);
 
-  getAll(): Observable<IGame[]> {
+  getAll(userId?: number): Observable<IGame[]> {
+    if (userId !== undefined) {
+      return this.http.get<IGame[]>(`${this.baseUrl}?userId=${userId}`);
+    }
+
     return this.http.get<IGame[]>(`${this.baseUrl}`);
   }
 

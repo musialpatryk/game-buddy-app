@@ -1,7 +1,7 @@
 import { Component, DestroyRef, inject } from '@angular/core';
 import { GamesModule } from '../../modules/games/games.module';
 import { MatButton } from '@angular/material/button';
-import { MatBottomSheet, MatBottomSheetModule, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { MatBottomSheet, MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { AddGameComponent } from '../../modules/games/components/add-game/add-game.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
@@ -11,7 +11,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   imports: [GamesModule, MatButton, MatBottomSheetModule],
   templateUrl: './games-view.component.html',
 })
-export class GameViewComponent {
+export class GamesView {
   private bottomSheet = inject(MatBottomSheet);
   private destroyRef = inject(DestroyRef);
 
